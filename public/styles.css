@@ -496,7 +496,7 @@ h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 15px;
+  gap: 5px;
   padding-right: 2vw;
   /* max-width: 25vw; */
 
@@ -541,8 +541,9 @@ h2 {
 .rar_tileBox {
   display: flex;
   flex-direction: column;
-  width: 55vw;
+  width: 80vw;
   resize: vertical;
+  overflow-y: auto;
   height: auto;
   max-height: 60vw;
   margin-bottom: 2vw;
@@ -651,7 +652,7 @@ h2 {
 #rar_tileBoxButtons {
   background-color: #ffffff;
   border: 1px solid #525151;
-  color:#525151;
+  color: black;
   font-size: 1.2vw;
   width: 12vw;
   height: 4vw;
@@ -779,15 +780,20 @@ meter::-webkit-meter-optimum-value {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
+#modalChunk {
+  height: 1vw;
+  width: 1vw;
+}
 #myModal-content { /* this is the only way to access my modal */
   display: flex;
   color: #525151;
   border-color: #5c5c5c;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   gap: 2vw;
   background-color: #ffffff;
+  opacity: 1;
   margin: 15vw;
   padding: 20px;
   border: 3px solid black;

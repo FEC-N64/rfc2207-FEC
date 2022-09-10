@@ -214,16 +214,16 @@ class AddReview extends React.Component {
 
   render() {
     const { style, revbody, stylePics } = this.state;
-    const { currentProductName } = this.props;
-    const darkMode = { background: this.isDarkMode ? '#e2eceb' : 'white', color: this.isDarkMode ? '#e2eceb' : 'black' };
-    const darkModeModal = {'background-color': this.isDarkMode ? '#e2eceb' : 'white'}
+    const { currentProductName, isDarkMode } = this.props;
+    const darkMode = { background: isDarkMode ? '#e2eceb' : 'white', color: isDarkMode ? '#e2eceb' : 'black' };
+    const darkModeModal = { backgroundColor: isDarkMode ? '#e2eceb !important' : 'white !important' };
     return (
-      <div id="modalChunk" style={darkModeModal}>
-        <button type="button" id="rar_tileBoxButtons" style={darkMode} onClick={this.handleModalClick.bind(this)}>
+      <div id="modalChunk">
+        <button type="button" id="rar_tileBoxButtons" onClick={this.handleModalClick.bind(this)}>
           ADD A REVIEW +
         </button>
         <div id="myPicModal" className="modal" style={stylePics}>
-          <div id="myPicModalContent">
+          <div id="myPicModalContent" style={darkModeModal}>
             Add up to 5 product pictures below
             <div id="rar_picModalLine">{this.state.uploadImages.map((image) => (<img src={image} id="rar_picModalThumbs" alt="file not found" />))}</div>
             <p id="myPicsText" style={this.state.imageDivShow1}>Image 1:</p>
@@ -319,7 +319,7 @@ class AddReview extends React.Component {
             <small>For authentication reasons, you will not be emailed</small>
             <input id="rar_emailInput" type="text" onChange={this.handleEmailChange.bind(this)} />
             <div className="close">
-              <button id="rar_modalSubmit" type="button" style={darkMode} onClick={this.handleSubmit.bind(this)}>Submit</button>
+              <button id="rar_modalSubmit" type="button" onClick={this.handleSubmit.bind(this)}>Submit</button>
             </div>
           </div>
         </div>
