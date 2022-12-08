@@ -78,7 +78,6 @@ app.put('/reviews/putHelpful', (req, res) => {
 
 app.put('/reviews/putReport', (req, res) => {
   const ID = req.body;
-  console.log('This is the id', ID);
   axios.put(`${API}reviews/${ID.review_id}/report`, ID, options)
     .then((response) => res.send(response.data))
     .catch((error) => res.end(error));
@@ -95,7 +94,6 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
 app.put('/qa/questions/:question_id/report', (req, res) => {
   axios.put(`${API}qa/questions/${req.body.id}/report`, { question_id: req.body.id }, options)
     .then((response) => {
-      console.log(response.data);
       res.send(response);
     })
     .catch((err) => res.send(err));
@@ -118,7 +116,6 @@ app.post('/addanswer/:question_id', (req, res) => {
 app.post('/addquestion', (req, res) => {
   axios.post(`${API}qa/questions`, req.body, options)
     .then((response) => {
-      console.log(response);
       res.send(response.data);
     })
     .catch((err) => res.send(err));
